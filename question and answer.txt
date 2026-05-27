@@ -1,0 +1,63 @@
+1. What is a foreign key and what does ON DELETE CASCADE do in your expenses table?
+	A foreign key is used to connect two tables in the database.
+	In my project, the user_id in the expenses table is connected with the id in the users table.
+
+	This helps to identify which expense belongs to which user.
+
+      I used:
+
+	FOREIGN KEY (user_id)
+	REFERENCES users(id)
+	ON DELETE CASCADE
+
+	ON DELETE CASCADE means if a user account is deleted, all the expenses related to that user will also be deleted automatically.
+
+
+2. How does your backend make sure User A cannot see User B's expenses?
+	In my backend, I used session management to identify the logged-in user.
+	After login, the user's id is stored in the session:
+
+	session['user_id'] = user['id']
+
+	Whenever expenses are loaded, updated, or deleted, I check the logged-in user's id.
+	Example:
+	========
+	  SELECT * FROM expenses
+	  WHERE user_id=%s
+	This makes sure users can only access their own expenses.
+	So User A cannot see User B's expense data because every query is filtered using the logged-in user's id.
+
+3. What SQL query did you use for the category summary on the dashboard? Write it out.
+
+	For the dashboard summary, I used this SQL query:
+
+	SELECT
+	COUNT(*) as total_expenses,
+	SUM(amount) as total_amount,
+	MAX(amount) as highest_expense
+	FROM expenses
+	WHERE user_id=%s
+
+4. What was the hardest part of this task and how did you solve it?
+
+The hardest part of this task was connecting the frontend, backend, and database together properly.
+
+At first, I faced issues with:
+
+Login sessions
+Fetch API requests
+Dashboard updates
+Edit expense functionality
+JSON errors
+
+Especially while updating expenses, I got internal server errors and JSON parsing issues.
+
+I solved these problems by:
+
+Checking browser console errors
+Verifying API routes
+Fixing Flask backend responses
+Using proper session validation
+Updating JavaScript fetch requests correctly
+
+After debugging step by step, the application started working properly with add, edit, delete, filter, and dashboard features.
