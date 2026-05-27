@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Expenses</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <div class="dashboard-header">
+
+            <h1>Manage Expenses</h1>
+
+            <div>
+
+                <button onclick="goToDashboard()">
+                    Dashboard
+                </button>
+
+                <button onclick="logoutUser()">
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- ADD EXPENSE FORM -->
+        <div class="expense-form">
+
+            <h2>Add Expense</h2>
+
+            <input type="hidden" id="expenseId">
+
+            <input type="text"
+                   id="title"
+                   placeholder="Expense Title">
+
+            <input type="number"
+                   id="amount"
+                   placeholder="Amount">
+
+            <select id="category">
+
+                <option value="">Select Category</option>
+
+                <option>Food</option>
+                <option>Transport</option>
+                <option>Shopping</option>
+                <option>Health</option>
+                <option>Education</option>
+                <option>Entertainment</option>
+                <option>Other</option>
+
+            </select>
+
+            <input type="date"
+                   id="date">
+
+            <textarea id="note"
+                      placeholder="Note (optional)" rows="5">
+            </textarea>
+
+            <button onclick="addExpense()">
+                Save Expense
+            </button>
+
+        </div>
+
+        <!-- FILTER SECTION -->
+        <div class="filter-section">
+
+            <h2>Filter Expenses</h2>
+
+            <select id="filterCategory">
+
+                <option value="">All Categories</option>
+
+                <option>Food</option>
+                <option>Transport</option>
+                <option>Shopping</option>
+                <option>Health</option>
+                <option>Education</option>
+                <option>Entertainment</option>
+                <option>Other</option>
+
+            </select>
+
+            <input type="date" id="fromDate">
+
+            <input type="date" id="toDate">
+
+            <button onclick="filterExpenses()">
+                Apply Filter
+            </button>
+
+        </div>
+
+        <!-- EXPENSE TABLE -->
+        <div class="dashboard-section">
+
+            <h2>All Expenses</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Title</th>
+                        <th>Amount</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>Note</th>
+                        <th>Actions</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="expenseTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>

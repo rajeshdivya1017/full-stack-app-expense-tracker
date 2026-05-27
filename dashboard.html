@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <div class="dashboard-header">
+
+            <div>
+
+                <h1>Expense Dashboard</h1>
+
+                <h3 id="welcomeText">
+                    Welcome User
+                </h3>
+
+            </div>
+
+            <div>
+
+                <button onclick="goToExpenses()">
+                    Manage Expenses
+                </button>
+
+                <button onclick="logoutUser()">
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- SUMMARY CARDS -->
+        <div class="summary-grid">
+
+            <div class="summary-card">
+                <h2 id="totalExpenses">0</h2>
+                <p>Total Expenses</p>
+            </div>
+
+            <div class="summary-card">
+                <h2 id="totalAmount">₹0</h2>
+                <p>Total Amount Spent</p>
+            </div>
+
+            <div class="summary-card">
+                <h2 id="highestExpense">₹0</h2>
+                <p>Highest Expense</p>
+            </div>
+
+            <div class="summary-card">
+                <h2 id="categoryCount">0</h2>
+                <p>Categories Used</p>
+            </div>
+
+        </div>
+
+        <!-- CATEGORY BREAKDOWN -->
+        <div class="dashboard-section">
+
+            <h2>Category Breakdown</h2>
+
+            <div id="categoryBreakdown">
+
+            </div>
+
+        </div>
+
+        <!-- RECENT EXPENSES -->
+        <div class="dashboard-section">
+
+            <h2>Recent 5 Expenses</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Title</th>
+                        <th>Amount</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="recentExpenses">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+PROJECT TITLE:
+=================
+Personal Expense Tracker
+
+TECHNOLOGIES USED:
+======================
+Python
+Flask
+MySQL
+HTML
+CSS
+JavaScript
+
+PROJECT DESCRIPTION:
+==========================
+The Personal Expense Tracker is a full stack web application used to manage daily expenses securely.
+Users can register and log in to their own accounts and manage personal expense records privately.
+
+MAIN FEATURES:
+==================
+1. User Registration
+2. User Login and Logout
+3. Add Expense
+4. Edit Expense
+5. Delete Expense
+6. Filter Expenses
+7. Dashboard Summary
+8. Category Breakdown
+9. Session Authentication
+10. Secure Database Connection
+
+USERS TABLE:
+===============
+Stores user details like:
+- username
+- email
+- password
+
+EXPENSES TABLE:
+====================
+Stores expense details like:
+- title
+- amount
+- category
+- date
+- note
+
+KEY CONCEPTS USED:
+=======================
+1. CRUD Operations
+2. Foreign Key Relationship
+3. Session Management
+4. REST API
+5. Fetch API
+6. MySQL Database
+7. Frontend and Backend Integration
+
+PROJECT FLOW:
+=================
+1. User registers account
+2. User logs into application
+3. User adds expenses
+4. Expenses stored in MySQL database
+5. Dashboard displays expense summaries
+6. User can edit/delete/filter expenses
+7. User logs out securely
+
+SECURITY FEATURES:
+=======================
+1. Password hashing using bcrypt
+2. Session-based authentication
+3. Protected routes
+4. Parameterized SQL queries
+
+
+CONCLUSION:
+==============
+This project helps users track and manage their daily expenses efficiently while learning important full stack development concepts using Flask and MySQL.
